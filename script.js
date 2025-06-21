@@ -14,8 +14,11 @@ const CART_REMOVE_ITEM = 'cart/removeItem';
 const CART_ITEM_INCREASE_QUANTITY = 'cart/increaseItemQuantity';
 const CART_ITEM_DECREASE_QUANTITY = 'cart/decreaseItemQuantity';
 
-const WISHLIST_ADD_ITEM = 'cart/addItem';
-const WISHLIST_REMOVE_ITEM = 'cart/removeItem';
+
+const WISHLIST_ADD_ITEM = 'wishList/addItem';
+const WISHLIST_REMOVE_ITEM = 'wishList/removeItem';
+
+
 
 function reducer(state = initialState, action) {
 
@@ -37,7 +40,14 @@ function reducer(state = initialState, action) {
         if(cartItem.productId === action.payload.productId && cartItem.quantity > 1) {
           return {...cartItem, quantity: cartItem.quantity - 1}
         }
-      })}
+        return cartItem;
+      }).filter((cartItem)=> cartItem.quantity > 0)
+    }
+
+      case WISHLIST_ADD_ITEM:
+        return {...state, wishList: [...state.wishList, action.payload]}
+      case WISHLIST_REMOVE_ITEM:
+        return {...state, wishList: state.wishList.filter(wishItem => wishItem.productId !== action.payload.productId)}
     default:
       return state;
     
@@ -54,15 +64,14 @@ console.log(store);
 
 
 store.dispatch({type:CART_ADD_ITEM, payload: {productId: 1, quantity: 1}})
-store.dispatch({type:CART_ADD_ITEM, payload: {productId: 12, quantity: 1}})
-store.dispatch({type:CART_ADD_ITEM, payload: {productId: 13, quantity: 1}})
 store.dispatch({type:CART_ADD_ITEM, payload: {productId: 17, quantity: 1}})
-store.dispatch({type:CART_REMOVE_ITEM, payload: {productId: 12}})
-
-store.dispatch({type:CART_ITEM_INCREASE_QUANTITY, payload: {productId: 12}})
-store.dispatch({type:CART_ITEM_INCREASE_QUANTITY, payload: {productId: 12}})
-store.dispatch({type:CART_ITEM_INCREASE_QUANTITY, payload: {productId: 15}})
+// store.dispatch({type:CART_REMOVE_ITEM, payload: {productId: 12}})
+store.dispatch({type:CART_ITEM_INCREASE_QUANTITY, payload: {productId: 1}})
 store.dispatch({type:CART_ITEM_DECREASE_QUANTITY, payload: {productId: 12}})
 
 
-console.log(store.getState());        
+store.dispatch({type:WISHLIST_ADD_ITEM, payload: {productId: 20}})
+store.dispatch({type: WISHLIST_REMOVE_ITEM, payload: {productId: 23}})
+// store.dispatch({type:WISHLIST_REMOVE_ITEM, payload: {productId: 2}})
+
+// console.log(store.getState());        
