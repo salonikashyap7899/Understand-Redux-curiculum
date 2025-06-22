@@ -668,83 +668,25 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"kTBnD":[function(require,module,exports,__globalThis) {
 var _redux = require("redux");
-var _productsListJs = require("./productsList.js");
-const initialState = {
-    products: (0, _productsListJs.productsList),
-    cartItems: [],
-    wishList: []
-};
-const CART_ADD_ITEM = 'cart/addItem';
-const CART_REMOVE_ITEM = 'cart/removeItem';
-const CART_ITEM_INCREASE_QUANTITY = 'cart/increaseItemQuantity';
-const CART_ITEM_DECREASE_QUANTITY = 'cart/decreaseItemQuantity';
-const WISHLIST_ADD_ITEM = 'wishList/addItem';
-const WISHLIST_REMOVE_ITEM = 'wishList/removeItem';
-function reducer(state = initialState, action) {
-    switch(action.type){
-        case CART_ADD_ITEM:
-            return {
-                ...state,
-                cartItems: [
-                    ...state.cartItems,
-                    action.payload
-                ]
-            };
-        case CART_REMOVE_ITEM:
-            return {
-                ...state,
-                cartItems: state.cartItems.filter((cartItem)=>cartItem.productId !== action.payload.productId)
-            };
-        case CART_ITEM_INCREASE_QUANTITY:
-            return {
-                ...state,
-                cartItems: state.cartItems.map((cartItem)=>{
-                    if (cartItem.productId === action.payload.productId) return {
-                        ...cartItem,
-                        quantity: cartItem.quantity + 1
-                    };
-                    return cartItem;
-                })
-            };
-        case CART_ITEM_DECREASE_QUANTITY:
-            return {
-                ...state,
-                cartItems: state.cartItems.map((cartItem)=>{
-                    if (cartItem.productId === action.payload.productId && cartItem.quantity > 1) return {
-                        ...cartItem,
-                        quantity: cartItem.quantity - 1
-                    };
-                    return cartItem;
-                }).filter((cartItem)=>cartItem.quantity > 0)
-            };
-        case WISHLIST_ADD_ITEM:
-            return {
-                ...state,
-                wishList: [
-                    ...state.wishList,
-                    action.payload
-                ]
-            };
-        case WISHLIST_REMOVE_ITEM:
-            return {
-                ...state,
-                wishList: state.wishList.filter((wishItem)=>wishItem.productId !== action.payload.productId)
-            };
-        default:
-            return state;
-    }
-}
+var _productsList = require("./productsList");
+var _cartReducer = require("./cartReducer");
+var _wishListReducer = require("./wishListReducer");
+const reducer = (0, _redux.combineReducers)({
+    products: (0, _productsList.productsList),
+    cartItem: (0, _cartReducer.cartReducer),
+    wishList: (0, _wishListReducer.wishListReducer)
+});
 const store = (0, _redux.createStore)(reducer, window.__REDUX_DEVTOOLS_EXTENSION__?.());
 console.log(store);
 store.dispatch({
-    type: CART_ADD_ITEM,
+    type: (0, _cartReducer.CART_ADD_ITEM),
     payload: {
         productId: 1,
         quantity: 1
     }
 });
 store.dispatch({
-    type: CART_ADD_ITEM,
+    type: (0, _cartReducer.CART_ADD_ITEM),
     payload: {
         productId: 17,
         quantity: 1
@@ -752,25 +694,25 @@ store.dispatch({
 });
 // store.dispatch({type:CART_REMOVE_ITEM, payload: {productId: 12}})
 store.dispatch({
-    type: CART_ITEM_INCREASE_QUANTITY,
+    type: (0, _cartReducer.CART_ITEM_INCREASE_QUANTITY),
     payload: {
         productId: 1
     }
 });
 store.dispatch({
-    type: CART_ITEM_DECREASE_QUANTITY,
+    type: (0, _cartReducer.CART_ITEM_DECREASE_QUANTITY),
     payload: {
         productId: 12
     }
 });
 store.dispatch({
-    type: WISHLIST_ADD_ITEM,
+    type: (0, _wishListReducer.WISHLIST_ADD_ITEM),
     payload: {
         productId: 20
     }
 });
 store.dispatch({
-    type: WISHLIST_REMOVE_ITEM,
+    type: (0, _wishListReducer.WISHLIST_REMOVE_ITEM),
     payload: {
         productId: 23
     }
@@ -778,7 +720,7 @@ store.dispatch({
  // console.log(store.getState());        
 ;
 
-},{"redux":"7RvxM","./productsList.js":"75H0b"}],"7RvxM":[function(require,module,exports,__globalThis) {
+},{"redux":"7RvxM","./productsList":"75H0b","./cartReducer":"7K9qs","./wishListReducer":"fIGBC"}],"7RvxM":[function(require,module,exports,__globalThis) {
 // src/utils/formatProdErrorMessage.ts
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -1362,6 +1304,70 @@ const productsList = [
         }
     }
 ];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"7K9qs":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "CART_ADD_ITEM", ()=>CART_ADD_ITEM);
+parcelHelpers.export(exports, "CART_REMOVE_ITEM", ()=>CART_REMOVE_ITEM);
+parcelHelpers.export(exports, "CART_ITEM_INCREASE_QUANTITY", ()=>CART_ITEM_INCREASE_QUANTITY);
+parcelHelpers.export(exports, "CART_ITEM_DECREASE_QUANTITY", ()=>CART_ITEM_DECREASE_QUANTITY);
+parcelHelpers.export(exports, "cartReducer", ()=>cartReducer);
+const CART_ADD_ITEM = 'cart/addItem';
+const CART_REMOVE_ITEM = 'cart/removeItem';
+const CART_ITEM_INCREASE_QUANTITY = 'cart/increaseItemQuantity';
+const CART_ITEM_DECREASE_QUANTITY = 'cart/decreaseItemQuantity';
+function cartReducer(state = [], action) {
+    switch(action.type){
+        case CART_ADD_ITEM:
+            return [
+                ...state,
+                action.payload
+            ];
+        case CART_REMOVE_ITEM:
+            return state.filter((cartItem)=>cartItem.productId !== action.payload.productId);
+        case CART_ITEM_INCREASE_QUANTITY:
+            return state.map((cartItem)=>{
+                if (cartItem.productId === action.payload.productId) return {
+                    ...cartItem,
+                    quantity: cartItem.quantity + 1
+                };
+                return cartItem;
+            });
+        case CART_ITEM_DECREASE_QUANTITY:
+            return state.map((cartItem)=>{
+                if (cartItem.productId === action.payload.productId && cartItem.quantity > 1) return {
+                    ...cartItem,
+                    quantity: cartItem.quantity - 1
+                };
+                return cartItem;
+            }).filter((cartItem)=>cartItem.quantity > 0);
+        default:
+            return state;
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"fIGBC":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "WISHLIST_ADD_ITEM", ()=>WISHLIST_ADD_ITEM);
+parcelHelpers.export(exports, "WISHLIST_REMOVE_ITEM", ()=>WISHLIST_REMOVE_ITEM);
+parcelHelpers.export(exports, "wishListReducer", ()=>wishListReducer);
+const WISHLIST_ADD_ITEM = 'wishList/addItem';
+const WISHLIST_REMOVE_ITEM = 'wishList/removeItem';
+function wishListReducer(state = [], action) {
+    switch(action.type){
+        case WISHLIST_ADD_ITEM:
+            return [
+                ...state,
+                action.payload
+            ];
+        case WISHLIST_REMOVE_ITEM:
+            return state.filter((item)=>item.productId !== action.payload.productId);
+        default:
+            return state;
+    }
+}
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["n0fw4","kTBnD"], "kTBnD", "parcelRequire651a", {})
 
