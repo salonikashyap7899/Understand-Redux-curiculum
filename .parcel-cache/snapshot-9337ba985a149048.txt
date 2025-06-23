@@ -9,7 +9,7 @@
 73C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\.gitignore133943786843612922 0
 104C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\chrome-trace-event\README.md133944716314435991 0
 97C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\@swc\helpers\_\_throw133944716405246477 1
-72C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\script.js133950797690159696 0
+72C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\script.js133951661596047816 0
 104C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\semver\internal\constants.js133944716343934201 0
 107C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\caniuse-lite\data\regions\GI.js133944716415390487 0
 109C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\caniuse-lite\data\features\sni.js133944716452801225 0
@@ -38,7 +38,7 @@
 84C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\has-flag133944716316547049 1
 107C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\@swc\helpers\src\_ts_values.mjs133944716415190551 0
 131C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\@parcel\error-overlay\src\effects\unhandledRejection.js133944716367382015 0
-77C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\cartReducer.js133950796429378663 0
+77C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\cartReducer.js133951661352447227 0
 152C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\msgpackr-extract\node_modules\.bin\node-gyp-build-optional-packages-optional133944716460814410 0
 107C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\caniuse-lite\data\regions\DO.js133944716406852021 0
 101C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\@parcel\optimizer-svg\lib133944716302919904 1
@@ -49,13 +49,13 @@
 100C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\@parcel\fs\src\NodeFS.js133944716343238297 0
 85C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\is-number133944716309047782 1
 106C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\postcss-value-parser\README.md133944716335445180 0
-67C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\dist133950794843155979 1
+67C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\dist133951661597400923 1
 123C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\@swc\helpers\_\_class_private_field_destructure133944716393061772 1
 123C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\@parcel\transformer-json\lib\JSONTransformer.js133944716303159859 0
 106C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\@swc\helpers\esm\_construct.js133944716386224175 0
 111C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\type-fest\source\readonly-deep.d.ts133944716367101884 0
 94C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\chrome-trace-event133944716326614296 1
-78C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\productsList.js133947157923375439 0
+78C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\productsList.js133950813162020306 0
 110C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\node-addon-api\tools\check-napi.js133944716349907437 0
 103C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\@swc\helpers\cjs\_throw.cjs133944716378370645 0
 90C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\to-regex-range133944716309017806 1
@@ -70,7 +70,7 @@
 113C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\@mischnic\json-sourcemap\package.json133944716307882133 0
 102C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\utility-types\package.json133944716329280938 0
 82C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\semver133944716373043829 1
-80C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\productReducer.js133950796356735787 0
+80C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\productReducer.js133951656479053835 0
 109C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\postcss-value-parser\lib\parse.js133944716308062155 0
 103C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\lightningcss-win32-x64-msvc133944716309097850 1
 120C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\@parcel\types-internal\src\PackageManager.js133944716344204629 0
@@ -677,7 +677,7 @@
 121C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\@parcel\bundler-default\src\DefaultBundler.js133944716325608968 0
 111C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\@parcel\reporter-dev-server\LICENSE133944716301269197 0
 100C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\term-size\vendor\windows133944716325458976 1
-100C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\dist\Understand-Redux.3c14d121.js.map133950794843135994 0
+100C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\dist\Understand-Redux.3c14d121.js.map133951661597389245 0
 133C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\lmdb\dependencies\lmdb-data-v1\libraries\liblmdb\mtest6.c133944716378560639 0
 107C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\caniuse-lite\data\regions\MG.js133944716437450006 0
 105C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\nullthrows\nullthrows.js.flow133944716318038454 0
@@ -2022,7 +2022,7 @@
 123C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\@swc\helpers\src\_skip_first_generator_next.mjs133944716413869585 0
 122C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\@swc\helpers\cjs\_interop_require_wildcard.cjs133944716375604450 0
 115C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\caniuse-lite\data\features\css-fixed.js133944716390775907 0
-96C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\dist\Understand-Redux.3c14d121.js133950794843064567 0
+96C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\dist\Understand-Redux.3c14d121.js133951661597324825 0
 122C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\caniuse-lite\data\features\css-focus-within.js133944716390875754 0
 122C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\caniuse-lite\data\features\css-font-palette.js133944716390921018 0
 103C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\@parcel\graph\lib\BitSet.js133944716340362880 0
@@ -3541,4 +3541,4 @@
 91C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\.bin\parcel.cmd133944716460814410 0
 91C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\.bin\parcel.ps1133944716460814410 0
 87C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\node_modules\.bin\semver133944716460824420 0
-78C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\dist\index.html133950793793331674 0
+78C:\Users\isalo\OneDrive\Desktop\REDUX-TOOLKIT\Understand-Redux\dist\index.html133951659720880189 0

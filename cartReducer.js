@@ -1,14 +1,48 @@
 
 
 
-
+// Action tupe
 export const CART_ADD_ITEM = 'cart/addItem';
 export const CART_REMOVE_ITEM = 'cart/removeItem';
 export const CART_ITEM_INCREASE_QUANTITY = 'cart/increaseItemQuantity';
 export const CART_ITEM_DECREASE_QUANTITY = 'cart/decreaseItemQuantity';
 
+// action creators
+
+export function AddCartItem(productId, quantity = 1) {
+  return { 
+    type: CART_ADD_ITEM, 
+    payload: { productId: productId,  quantity:  quantity } 
+  }
+}
 
 
+export function removeItem(productId){
+  return { 
+    type: CART_REMOVE_ITEM, 
+    payload: { productId: productId }
+ 
+  }
+}
+
+export function decreaseCartItemQuantity(productId){
+  return { 
+    type: CART_ITEM_DECREASE_QUANTITY, 
+    payload: { productId: productId }
+ 
+  }
+}
+
+export function increaseCartItemQuantity(productId){
+  return{
+    type: CART_ITEM_INCREASE_QUANTITY,
+    payload: { productId: productId }
+  }
+}
+
+
+
+// reducers
 export  default function cartReducer(state = [], action) {
       switch(action.type){
     case CART_ADD_ITEM:
