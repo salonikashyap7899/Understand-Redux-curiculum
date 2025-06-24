@@ -3,16 +3,13 @@ import { productsList } from './productsList'; // ✅ Works with your current ex
 ;
 import cartReducer, {
   AddCartItem,
-  CART_ADD_ITEM,
-  CART_ITEM_DECREASE_QUANTITY,
-  CART_ITEM_INCREASE_QUANTITY,
   decreaseCartItemQuantity,
   increaseCartItemQuantity,
   removeItem
 } from './cartReducer';
 import wishListReducer, {
-  WISHLIST_ADD_ITEM,
-  WISHLIST_REMOVE_ITEM
+  addWishListItem,
+  removeWishList,
 } from './wishListReducer';
 import productsReducer from './productReducer';
 
@@ -58,8 +55,7 @@ store.dispatch(decreaseCartItemQuantity(70))
 store.dispatch(increaseCartItemQuantity(1))
 
  
-
-
-
+store.dispatch(addWishListItem(1, 2));
+store.dispatch(removeWishList(1));
 
 console.log(store.getState());
